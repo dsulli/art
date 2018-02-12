@@ -9,7 +9,7 @@ module.exports = {
 
     // Paths
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: 'https://dsulli.github.io/art/',
     proxyTable: {},
 
     // Various Dev Server settings
