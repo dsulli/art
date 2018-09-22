@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    Hey what's up
+    Hey what's <span class="text-blue font-bold">UP</span>
   </div>
 </template>
 
@@ -11,3 +11,4 @@ export default {
 }
 </script>
 
+<style src="./assets/css/styles.css"></style>
