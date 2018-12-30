@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    Hey what's <span class="text-blue font-bold">UP</span>
+    Hey what's <span class="text-blue font-bold">UP</span> dude
   </div>
 </template>
 
