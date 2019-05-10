@@ -6,7 +6,7 @@
             </div>
         </header>
         <div class="bg-black w-full p-8">
-            <div class="container mx-auto">
+            <div class="mx-auto">
                 <h2 class="font-sans font-normal uppercase tracking-wide pl-6 text-grey-light">Gallery</h2>
                 <Gallery />
             </div>

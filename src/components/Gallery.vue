@@ -7,18 +7,22 @@
             <div 
                 v-for="n in imgOrder" 
                 :key="n"
-                class="w-1/5 p-6 relative"
+                :ref="`thumb${n}`"
+                class="p-2 relative cursor-pointer"
+                @mouseover="hoverThumb(n)"
+                @mouseout="hoverOutThumb(n)"
+                @click="selectImage(n)"
             >
                 <img 
                     :src="require(`@/assets/art/thumbs/illustration${n}.jpg`)"
-                    class="relative cursor-pointer"
-                    @mouseover="hoverThumb($event)"
-                    @mouseout="hoverOutThumb($event)"
-                    @click="selectImage(n)"
+                    class="relative"
+                    
                 >
-                <div class="absolute pin-l pin-b w-full font-sans p-6 opacity-0 uppercase">
-                    <span class="title block text-white font-extrabold">{{ images[n].title }}</span>
-                    <span class="title font-bold text-grey-lightest">{{ images[n].date }}</span>
+                <div class="opacity-0 gallery-item">
+                    <div class="absolute pin-l pin-b w-full font-sans p-6 uppercase">
+                        <span class="title block text-white font-extrabold">{{ images[n].title }}</span>
+                        <span class="title font-bold text-grey-lightest">{{ images[n].date }}</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -28,6 +32,8 @@
             :image="images[selectedImage]"
             :isVisible="showImage"
             @close="showImage = false"
+            @next="goNext"
+            @prev="goPrev"
         />
         </transition>
     </div>
@@ -100,29 +106,50 @@ export default {
         };
     },
     methods: {
-        hoverThumb(event) {
-            TweenLite.to(event.target, 0.25, {scale: 1.25});
-            TweenLite.to(event.target.nextElementSibling, 0.25, {opacity: 1});
-            let otherThumbs = this.$refs.thumbs.children;
-            for(let thumb of otherThumbs) {
-                if(thumb.children[0] !== event.target) {
-                    TweenLite.to(thumb, 0.5, {opacity: 0.5, "z-index": 0});
+        hoverThumb(n) {
+            for(var i = 0; i < this.imgOrder.length; i++) {
+                let count = this.imgOrder[i];
+                if(n !== count) {
+                    TweenLite.to(this.$refs[`thumb${count}`], 0.5, {opacity: 0.5});
                 }
             }
+            TweenLite.to(this.$refs[`thumb${n}`][0].children[1], 0.25, {opacity: 1});
         },
-        hoverOutThumb(event) {
-            TweenLite.to(event.target, 0.25, {scale: 1});
-            TweenLite.to(event.target.nextElementSibling, 0.25, {opacity: 0});
-            let otherThumbs = this.$refs.thumbs.children;
-            for(let thumb of otherThumbs) {
-                if(thumb.children[0] !== event.target) {
-                    TweenLite.to(thumb, 0.5, {opacity: 1});
+        hoverOutThumb(n) {
+            for(var i = 0; i < this.imgOrder.length; i++) {
+                let count = this.imgOrder[i];
+                if(n !== count) {
+                    TweenLite.to(this.$refs[`thumb${count}`], 0.5, {opacity: 1});
                 }
             }
+            TweenLite.to(this.$refs[`thumb${n}`][0].children[1], 0.25, {opacity: 0});
+            // TweenLite.to(event.target.nextElementSibling, 0.25, {opacity: 0});
+            // let otherThumbs = this.$refs.thumbs.children;
+            // for(let thumb of otherThumbs) {
+            //     if(thumb.children[0] !== event.target) {
+            //         TweenLite.to(thumb, 0.5, {opacity: 1});
+            //     }
+            // }
         },
         selectImage(img) {
             this.selectedImage = img;
             this.showImage = true;
+        },
+        goNext() {
+            let currentIndex = this.imgOrder.indexOf(this.selectedImage);
+            if(currentIndex !== this.imgOrder.length - 1) {
+                this.selectedImage = this.imgOrder[currentIndex + 1];
+            } else {
+                this.selectedImage = this.imgOrder[0];
+            }
+        },
+        goPrev() {
+            let currentIndex = this.imgOrder.indexOf(this.selectedImage);
+            if(currentIndex !== 0) {
+                this.selectedImage = this.imgOrder[currentIndex - 1];
+            } else {
+                this.selectedImage = this.imgOrder[this.imgOrder.length - 1];
+            }
         }
     }
 }
@@ -136,6 +163,16 @@ export default {
         transition: opacity .5s;
     }
     .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0;
+    }
+    .gallery-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 8%;
+        width: 84%;
+        height: 90%;
+        border: 2px solid rgba(255,255,255,0.5);
         opacity: 0;
     }
 </style>
