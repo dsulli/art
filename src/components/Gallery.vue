@@ -2,13 +2,13 @@
     <div>
         <div 
             ref="thumbs"
-            class="flex flex-row flex-wrap"
+            class="container mx-auto flex flex-row flex-wrap"
         >
             <div 
                 v-for="n in imgOrder" 
                 :key="n"
                 :ref="`thumb${n}`"
-                class="p-2 relative cursor-pointer"
+                class="p-2 relative cursor-pointer w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5"
                 @mouseover="hoverThumb(n)"
                 @mouseout="hoverOutThumb(n)"
                 @click="selectImage(n)"
