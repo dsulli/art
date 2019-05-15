@@ -1,0 +1,22 @@
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+body {
+    @apply bg-black;
+    background: url('/bgpattern.jpg') repeat;
+}
+
+.fade-enter-active, .fade-leave-active {
+   transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+   opacity: 0;
+}
+
+.flipped {
+   transform: scaleX(-1);
+}
