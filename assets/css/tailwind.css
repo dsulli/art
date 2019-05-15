@@ -5,10 +5,6 @@
 
 @tailwind utilities;
 
-body {
-    @apply bg-black;
-    background: url('/bgpattern.jpg') repeat;
-}
 
 .fade-enter-active, .fade-leave-active {
    transition: opacity .5s;

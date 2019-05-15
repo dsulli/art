@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div ref="thumbs" class="px-12 mx-auto flex flex-row flex-wrap">
+    <div ref="thumbs" class="md:px-12 mx-auto flex flex-row flex-wrap">
       <div
         v-for="n in imgOrder"
         :key="n"
@@ -56,52 +56,82 @@ export default {
         '10': {
           title: 'Winter Vladimir',
           date: 'Dec 2018',
-          orientation: 'portrait'
+          orientation: 'portrait',
+          description: `
+            I drew Vladimir from League of Legends in a winter outfit for a secret santa. The main inspiration for this piece is Ayami Kojima with the dramatic lighting and oil painting effects. 
+          `
         },
         '09': {
           title: 'Dark Waters Diana',
           date: 'Oct 2018',
-          orientation: 'landscape'
+          orientation: 'landscape',
+          description: `
+            I loved this Diana skin as soon as I saw it, so I knew I had to create fan art of it. I experimented with imitating ambient occlusion to paint some harsher shadows in the nooks and crannies of the forms, however I definitely need more practice to get it right! 
+         `
         },
         '08': {
           title: 'Odyssey Sona',
           date: 'Sep 2018',
-          orientation: 'landscape'
+          orientation: 'landscape',
+          description: `
+            This piece was drawn to celebrate the League of Legends Odyssey event. Riot gave me codes for the Odyssey Sona emote to give away to my followers. I'm super grateful for the opportunity and had a ton of fun playing the game mode.
+          `
         },
         '07': {
           title: 'Anime Conji',
           date: 'May 2018',
-          orientation: 'portrait'
+          orientation: 'portrait',
+          description: `
+            Anime Conji is a convention in San Diego that I was a staff artist for from 2010 to 2013. In 2018, I was invited to be the Artist Guest of Honor. I drew the program guide book cover and the badge art below.
+          `
         },
         '06': {
           title: 'Pool Party Cait',
           date: 'Jun 2018',
-          orientation: 'landscape'
+          orientation: 'landscape',
+          description: `
+            Caitlyn from League of Legends is a favorite of mine, so I was excited for the release of her Pool Party skin. The background is inspired by a water effect I use in resin often.
+          `
         },
         '05': {
           title: 'Star Guardian Farewell',
           date: 'Mar 2018',
-          orientation: 'portrait'
+          orientation: 'portrait',
+          description: `
+            This piece was drawn for the charity fanzine, UNITED, themed around the Star Guardian universe. I had this idea that the last page of the zine would show the original team saying goodbye. It turned out to be a bittersweet piece.
+          `
         },
         '04': {
           title: 'Nier: Automata Scene',
           date: 'Mar 2017',
-          orientation: 'landscape'
+          orientation: 'landscape',
+          description: `
+            Nier: Automata had such a brilliant story, so I drew this piece to express some of the emotions from the game. The game has a muted color palette, so I kept this piece greyscale.
+          `
         },
         '03': {
           title: 'Taliyah',
           date: 'Jan 2017',
-          orientation: 'landscape'
+          orientation: 'landscape',
+          description: `
+            I love Taliyah's animations in League of Legends, and wanted to create a piece that portrays her graceful movement. She's having a blast surfing on rocks in the Shuriman sunset.
+          `
         },
         '02': {
           title: 'Whimsy',
           date: 'Dec 2016',
-          orientation: 'landscape'
+          orientation: 'landscape',
+          description: `
+            Lulu zooming through Summoner's Rift. She's my absolute favorite champion in League of Legends!
+          `
         },
         '01': {
           title: 'Elementalist Lux',
           date: 'Nov 2016',
-          orientation: 'landscape'
+          orientation: 'landscape',
+          description: `
+            Queen Elementalist Lux sits on her throne. I was heavily inspired by the Magic the Gathering Card, Teysa, Envoy of Ghosts. The pose makes her look powerful.
+          `
         }
       }
     }

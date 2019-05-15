@@ -5,12 +5,12 @@
     style="box-sizing: border-box;"
   >
     <div
-      class="absolute top-0 right-0 text-gray-300 inline-block close z-40"
+      class="fixed top-0 right-0 text-gray-300 inline-block close z-40"
       @click="close"
     ></div>
 
     <div
-      class="absolute left-0 center-vertical inline-block cursor-pointer p-4 bg-gray-900 z-40"
+      class="fixed left-0 center-vertical inline-block cursor-pointer p-4 bg-gray-900 z-40"
       @click="prev"
     >
       <svg width="30px" height="30px" viewBox="0 0 50 80" xml:space="preserve">
@@ -27,7 +27,7 @@
     </div>
 
     <div
-      class="absolute right-0 center-vertical inline-block cursor-pointer p-4 bg-gray-900 z-40"
+      class="fixed right-0 center-vertical inline-block cursor-pointer p-4 bg-gray-900 z-40"
       @click="next"
     >
       <svg
@@ -62,10 +62,17 @@
               :style="mainImgStyle"
               class="mx-auto"
             />
-            <div
-              class="p-6 font-sans font-normal uppercase tracking-wide pl-6 text-gray-200"
-            >
-              <div class="text-center text-3xl">{{ image.title }}</div>
+            <div class="p-6 font-sans font-normal pl-6 ">
+              <div
+                class="text-center text-3xl uppercase tracking-widest text-gray-600"
+              >
+                {{ image.title }}
+              </div>
+              <div
+                class="leading-relaxed tracking-wide pt-4 max-w-3xl mx-auto text-gray-400 pb-12 md:pb-0"
+              >
+                {{ image.description }}
+              </div>
             </div>
           </div>
         </div>
@@ -162,5 +169,13 @@ export default {
 .center-vertical {
   top: 50%;
   transform: translateY(-50%);
+}
+
+@media only screen and (max-width: 640px) {
+  .center-vertical {
+    top: auto;
+    bottom: 0;
+    transform: translateY(0);
+  }
 }
 </style>

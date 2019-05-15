@@ -6,16 +6,16 @@
     <div class="w-full p-8 font-sans ">
       <div class="mx-auto" style="max-width: 1400px;">
         <h2
-          class="font-normal text-4xl font-medium mb-8 text-center uppercase tracking-wide text-gray-200"
+          class="font-normal text-xl md:text-4xl font-medium mb-8 text-center uppercase tracking-wide text-gray-200"
         >
           <img
-            src="/heading-ornament.svg"
+            src="~/assets/heading-ornament.svg"
             class="inline-block"
             style="width: 60px;"
           />
           Illustrations
           <img
-            src="/heading-ornament.svg"
+            src="~/assets/heading-ornament.svg"
             class="inline-block flipped"
             style="width: 60px;"
           />
