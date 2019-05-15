@@ -1,21 +1,21 @@
-importScripts('/nuxt-gh-pages/_nuxt/workbox.4c4f5ca6.js')
+importScripts('/art/_nuxt/workbox.4c4f5ca6.js')
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "/nuxt-gh-pages/_nuxt/11b200e102c81f3163cf.js",
+    "url": "/art/_nuxt/11b200e102c81f3163cf.js",
     "revision": "917629a3b768e62a4c782c7dced3a1db"
   },
   {
-    "url": "/nuxt-gh-pages/_nuxt/14152fc1dc9b4d236fb8.js",
+    "url": "/art/_nuxt/14152fc1dc9b4d236fb8.js",
     "revision": "4431d4fe66d627bed476478b3ac3a7f5"
   },
   {
-    "url": "/nuxt-gh-pages/_nuxt/148c5fb3f8a7768e561d.js",
-    "revision": "ee1ce8a9b7b23b4b0912c1e152fcac7f"
+    "url": "/art/_nuxt/ac8b52c9243021e3ea91.js",
+    "revision": "6e8481b826483822391269d1fb20b4cb"
   },
   {
-    "url": "/nuxt-gh-pages/_nuxt/fec39862652033b462f3.js",
-    "revision": "465b6957e2e75d75721a798b76dd8914"
+    "url": "/art/_nuxt/b640ca64ae9ad8e7ee17.js",
+    "revision": "604a7e6a490bbf6ac0a05a10ce241272"
   }
 ], {
   "cacheId": "art",
@@ -26,6 +26,6 @@ workbox.precaching.precacheAndRoute([
 workbox.clientsClaim()
 workbox.skipWaiting()
 
-workbox.routing.registerRoute(new RegExp('/nuxt-gh-pages/_nuxt/.*'), workbox.strategies.cacheFirst({}), 'GET')
+workbox.routing.registerRoute(new RegExp('/art/_nuxt/.*'), workbox.strategies.cacheFirst({}), 'GET')
 
-workbox.routing.registerRoute(new RegExp('/nuxt-gh-pages/.*'), workbox.strategies.networkFirst({}), 'GET')
+workbox.routing.registerRoute(new RegExp('/art/.*'), workbox.strategies.networkFirst({}), 'GET')
